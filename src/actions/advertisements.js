@@ -2,8 +2,8 @@ import request from 'superagent'
 
 export const ALL_ADVERTISEMENTS = 'ALL_ADVERTISEMENTS'
 
-const baseUrl = 'http://localhost:4000'
-// const baseUrl = 'https://shrouded-ravine-78527.herokuapp.com'
+// const baseUrl = 'http://localhost:4000'
+const baseUrl = 'https://shrouded-ravine-78527.herokuapp.com'
 
 function allAdvertisements (payload) {
   return {
