@@ -2,8 +2,30 @@ import request from 'superagent'
 
 export const ALL_ADVERTISEMENTS = 'ALL_ADVERTISEMENTS'
 
-// const baseUrl = 'http://localhost:4000'
-const baseUrl = 'https://shrouded-ravine-78527.herokuapp.com'
+const baseUrl = 'http://localhost:4000'
+// const baseUrl = 'https://shrouded-ravine-78527.herokuapp.com'
+
+export const LOGIN = 'LOGIN'
+
+function credentials (payload) {
+    return {
+        type: LOGIN,
+        payload
+    }
+}
+
+//data = 'email','password'
+export const login = (email, password) => dispatch => {
+  request
+    .post(`${baseUrl}/login`)
+    .send({email, password})
+    .then(response => {
+        //I expect the response to have a jwt
+        const action = credentials(response.body)
+        dispatch(action)
+    })
+    .catch(console.error)
+}
 
 function allAdvertisements (payload) {
   return {

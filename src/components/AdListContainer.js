@@ -11,6 +11,7 @@ class AdListContainer extends React.Component {
   render() {
     return <AdList 
     advertisements={this.props.advertisements} 
+    user={this.props.user}
     />
   }
 }
@@ -18,6 +19,7 @@ class AdListContainer extends React.Component {
 function mapStateToProps (state) {
   return { 
       advertisements: state.advertisements,
+      user: state.user
     }
 }
 

@@ -15,12 +15,13 @@ class AdDetailsContainer extends React.Component {
 
   render() {  
     console.log(this.props.advertisement)
-    return <AdDetails 
-    advertisement={this.props.advertisement} 
+    return (
+    <AdDetails 
+      advertisement={this.props.advertisement} 
     // getAdvertisement={this.props.getAdvertisement}
     // updateAdvertisement={this.props.updateAdvertisement}
     // deleteAdvertisement={this.props.deleteAdvertisement}
-    />
+    />)
   }
 }
 
